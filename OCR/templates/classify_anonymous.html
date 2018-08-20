@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Handwritten Digit Recognition using Neural Networks</title>
+    <link rel="stylesheet" type="text/css" href="static/style_classify.css">
+    <link rel="stylesheet" href="../static/dist/cropper/cropper.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/">Hub</a>
+        <a class="active" href="/classify">Predict</a>
+        <a class="right" href="/">Login</a>
+    </div>
+    <h1>Handwriting Recognition using <span>Neural Networks</span></h1>
+    <p>This experimental web application can classify hand-written text. Draw on the canvas using a mouse or touchpad or upload an image to get a prediction.
+    </p>
+    <div id="loader" style="display:none;"></div>
+    <div class="controls">
+        <h2> Controls </h2>
+        <input type="button" id="clearButton" value="Clear" class="btn btn-primary btn-large btn-block"><br>
+        <input type="button" id="myButton" value="Predict" class="btn btn-primary btn-large btn-block"><br>
+        <input type="button" id="cropButton" class="btn btn-primary btn-large btn-block" value="Crop" /> <br>
+        <input type="file" id="imageLoader" name="imageLoader" accept="image/*" />
+        <br>
+        <br> Classification task:
+        <br>
+        <select id="networkSelect">
+            <option value ="none">Select</option>
+            <option value="numbers">Numbers</option>
+            <option value="letters">Uppercase letters</option>
+            <option value="class">Upper/lower/numbers</option>
+         </select>
+        <br>
+        <h2> Output </h2>
+        <textarea id="result" ></textarea>
+        <br>
+        <br>
+        <input type="button" id="downloadButton" value="Download Result" class="btn btn-primary btn-large btn-block">
+    </div>
+    <canvas id="canvas"></canvas>
+    <br>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Crop Image</h2>
+            </div>
+            <div class="modal-body">
+                <p>Drag to crop out unwanted features. </p>
+                <img id="cropImage" class="cropImg" />
+            </div>
+            <div class="modal-footer">
+                <input type="button" id="modalCrop" value="Crop" class="btn-small btn-primary btn-large btn-block"><br>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Built by George Lancaster. Powered by Flask and Keras.
+    </footer>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='../static/dist/cropper/cropper.js'></script>
+    <script src="{{ url_for('static',filename='drawing.js') }}"></script>
+    <script src='../static/classify.js'></script>
+</body>
+
+</html>

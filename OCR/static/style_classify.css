@@ -1,0 +1,285 @@
+body {
+  margin:0;
+  font-family: Arial;
+  background-color: #f5f5f5;
+  padding-left: 10%;
+  padding-right: 10%;
+
+}
+/* topnav -------------------------------------------------------------------*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #f5f5f5;
+  color: black;
+}
+.topnav a.right {
+	float:right;
+}
+
+/* Fonts --------------------------------------------------------------------*/
+textarea{
+  font-size: 0.875em;
+  font-family: Cambria, Georgia, serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+}
+.divParent{
+    width:300px;
+    height:300px;
+    border:1px solid red;
+    margin-left:5px;
+    float: right;
+
+}
+div.controls{
+    margin-left: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+    text-align: center;
+    width: 20%;
+    float: left;
+    background-color: white;
+    padding: 16px;
+    padding-left: 20px
+}
+div.output{
+  border-radius: 3px;
+  width: 20%;
+  text-align: center;
+  background-color: white;
+  padding:16px;
+  float: right;
+}
+#imageLoader{
+  font-family: Cambria, Georgia, serif;
+  font-style: normal;
+  font-variant: normal;
+}
+#canvas{
+  position:sticky;
+  border-radius: 3px;
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+  margin-left: 5vw;
+  float: left;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+textarea{
+  width: 100%;
+  height: 100px;
+}
+
+
+/* Button */
+input {
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 60%;
+transition: border .5s;
+}
+
+input:focus {
+border: 2px solid #3498DB;
+box-shadow: none;
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #e7e7e7;
+  color: black;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.btn-small {
+  border: 2px solid transparent;
+  background: #e7e7e7;
+  color: black;
+  font-size: 16px;
+  line-height: 25px;
+  padding: auto;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 20%;
+  margin:auto;
+  cursor: pointer;
+  margin-top: 2%;
+}
+
+.btn:hover {
+  background-color: #BEBEBE;
+}
+
+.login-link {
+  font-size: 12px;
+  height:25px;
+  color: #444;
+  display: block;
+	margin-top: 12px;
+
+}
+
+/* Input file */
+.inputfile {
+	width: 100px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  color: black;
+  text-align: center;
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid black;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 30px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #333;
+    color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  max-width: 70%;
+  margin: auto;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #333;
+    color: white;
+    text-align:
+}
+
+.cropImg{
+  max-width: 50%;
+}

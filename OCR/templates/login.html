@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/static/style_login.css" type="text/css"> {% block body %} {% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+
+
+<form action="/login" method="POST">
+    <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Login</h1>
+            </div>
+            <div class="login-form">
+                <div class="control-group">
+                    <input id="username" type="text" class="login-field" value="" placeholder="username" name="username">
+                    <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+                <div class="control-group">
+                    <input id="password" type="password" class="login-field" value="" placeholder="password" name="password">
+                    <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block">
+</form>
+</div>
+<p>
+    <form action="/signup">
+        <input type="submit" value="Sign up" class="btn btn-primary btn-large btn-block">
+    </form>
+    <p>
+        <form action="/guest">
+            <input type="submit" value="Guest" class="btn btn-primary btn-large btn-block">
+        </form>
+        </div>
+        </div>
+
+        {% if password == False %}
+        <script type="text/javascript">
+            passwordField = document.getElementById("password");
+            passwordField.placeholder = "invalid username/password";
+            passwordField.classList.add('formInvalid');
+        </script>
+        {% endif %} {% endif %} {% endblock %}

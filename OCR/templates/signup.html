@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/static/style_login.css" type="text/css">
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+<form action="/create_user" method="POST">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Sign up</h1>
+			  </div>
+				<div class="login-form">
+				<div class="control-group">
+				<input id="username" type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+				<div class="control-group">
+				<input id="password" type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+				<div class="control-group">
+        <input id="passwordConf" type="password" class="login-field" value="" placeholder="retype" name="confirm-password">
+				<label class="login-field-icon fui-lock" for="login-pass-confirm"></label>
+				</div>
+				<div class="control-group">
+        <input type="submit" value="Submit" class="btn btn-primary btn-large btn-block" >
+				</form>
+				</div>
+				<div class="control-group">
+				<form action="/">
+				<input type="submit" value="Return" class="btn btn-primary btn-large btn-block" >
+				<label class="login-field-icon fui-lock" for="return"></label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% if password == False %}
+	<script type="text/javascript">
+	passwordConfirmField = document.getElementById("passwordConf");
+	passwordConfirmField.placeholder = "mismatched passwords";
+	passwordConfirmField.classList.add('formInvalid');
+	</script>
+	{% endif %}
+	{% if username == False %}
+	<script type="text/javascript">
+	usernameField = document.getElementById("username");
+	usernameField.placeholder = "username unavailable";
+	usernameField.classList.add('formInvalid');
+	</script>
+	{% endif %}
+
+
+{% endif %}
+{% endblock %}

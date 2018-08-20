@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/style_hub.css" type="text/css">
+    <script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="/hub">Hub</a>
+        <a href="/classify">Predict</a>
+        <a class="right" href="/logout">Logout</a>
+    </div>
+    <div style="padding-left:16px">
+        <h2>Classification History</h2>
+        <h3>This page shows your previous classifications.</h3>
+    </div>
+    <div class=gal-container>
+        {% for z in zipped %} {% if z[1] %}
+        <div class="gallery">
+            <a target="_blank" href="{{ z[1] }}">
+          <img src="{{ z[1] }}" alt="{{ z[1] }}" width="20" height="20">
+          </a>
+            <input type="image" id="but_{{loop.index}}" onclick="setDownload({{ z[0] }})" class="btn btn-primary btn-small btn-block" src="..\static\res\ic_file_download\web\ic_file_download_black_24dp_2x.png" />
+            <input type="image" value="Delete Result" id="but_del_{{loop.index}}" onclick="deleteEntry({{ z[0] }})" class="btn btn-primary btn-small btn-block btn-right" src="..\static\res\ic_delete\web\ic_delete_black_24dp_2x.png" />
+        </div>
+        {% endif %} {% else %} You currently have no classifications. Press the Predict menu button to start classifying. {% endfor %}
+    </div>
+    <footer>
+        Built by George Lancaster. Powered by Flask and Keras.
+    </footer>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript" src= "../static/hub.js"></script>
+</body>
+
+</html>
